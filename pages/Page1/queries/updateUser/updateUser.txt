@@ -1,0 +1,9 @@
+UPDATE public."users" SET
+    "gender" = {{jsf_customerInfo.formData.gender}},
+    "dob" = {{new Date(jsf_customerInfo.formData.dob).toISOString()}},
+    "phone" = {{jsf_customerInfo.formData.phone}},
+    "email" = {{jsf_customerInfo.formData.email}},
+    "country" = {{jsf_customerInfo.formData.country}},
+    "name" = {{jsf_customerInfo.formData.name}},
+    "updated_at" = {{new Date().toISOString()}}
+  WHERE id = {{tbl_userInfo.selectedRow.id}};
